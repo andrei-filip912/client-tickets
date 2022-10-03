@@ -22,7 +22,7 @@ const Signup = () => {
     return (
         <form onSubmit={onSubmit}>
             <h1>Sign in!</h1>
-            <div className='form-group'>
+            <div className='margin-bottom'>
                 <label>Email Address</label>
                 <input 
                     value={email} 
@@ -30,7 +30,7 @@ const Signup = () => {
                     className='form-control' 
                 />
             </div>
-            <div className='form-group'>
+            <div className='margin-bottom'>
                 <label>Password Address</label>
                 <input 
                     value={password}
