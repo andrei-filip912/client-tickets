@@ -1,14 +1,17 @@
 import React from 'react'
 import useRequest from '../../hooks/use-request';
+import { useRouter } from 'next/router';
 
 const TicketShow = ({ ticket }) => {
+    const router = useRouter();
+
     const [doRequest, errors] = useRequest({
         url: '/api/orders',
         method: 'post',
         body: {
             ticketId: ticket.id
         },
-        onSuccess:(order) => console.log(order)
+        onSuccess:(order) => router.push('/orders/[orderId]', `/orders/${order.id}`)
     });
   return (
     <div>
