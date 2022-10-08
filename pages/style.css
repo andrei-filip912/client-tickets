@@ -1,3 +1,12 @@
 .margin-bottom {
     margin-bottom: 15px;
 }
+.concert-img {
+    margin-top: 2%;
+}
+.filters {
+    margin: 0.5% 0 1.25% 0;
+}
+.overflow-hidden {
+    overflow: hidden;
+}

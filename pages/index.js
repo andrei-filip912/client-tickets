@@ -1,35 +1,38 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import bg from '../public/bg.jpg';
+import ticket from '../public/ticket.jpg';
+
 
 const Index = ({ currentUser, tickets }) => {
     const ticketList = tickets.map(ticket => {
         return (
-            <tr key={ticket.id}>
-                <td>{ticket.title}</td>
-                <td>{ticket.price}</td>
-                <td>
-                    <Link href='/tickets/[ticketId]' as={`/tickets/${ticket.id }`}>
-                        <a>View</a>
-                    </Link>
-                </td>
-            </tr>
+            <div className="col">
+                <div className="card" >
+                    <div className="card-body">
+                        <h5 className="card-title">{ticket.title}</h5>
+                        <p className="card-text">Price: {ticket.price}.</p>
+                        <a href="#" className="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
         );
     });
 
     return (
         <div>
-            <h1>Tickets</h1>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {ticketList}
-                </tbody>
-            </table>
+            <div className="concert-img rounded" >
+                <Image src={bg} alt='...' placeholder="blur"></Image>
+            </div>
+
+            <div className='filters overflow-hidden'>
+                <input type='text' className='float-start'></input>
+                <input type='date' className='float-end'></input>
+            </div>
+
+            <div className="row row-cols-1 row-cols-md-4 g-4">
+                {ticketList}
+            </div>
         </div>
     );
 
