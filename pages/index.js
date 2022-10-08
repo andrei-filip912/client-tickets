@@ -7,8 +7,8 @@ import ticket from '../public/ticket.jpg';
 const Index = ({ currentUser, tickets }) => {
     const ticketList = tickets.map(ticket => {
         return (
-            <div className="col">
-                <div className="card" >
+            <div key={ticket.id} className="col">
+                <div  className="card" >
                     <div className="card-body">
                         <h5 className="card-title">{ticket.title}</h5>
                         <p className="card-text">Price: {ticket.price}.</p>
