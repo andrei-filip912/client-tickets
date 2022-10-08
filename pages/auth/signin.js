@@ -22,27 +22,6 @@ const Signup = () => {
     }
 
     return (
-        // <form onSubmit={onSubmit}>
-        //     <h1>Sign in!</h1>
-        //     <div className='margin-bottom'>
-        //         <label>Email Address</label>
-        //         <input 
-        // value={email} 
-        // onChange={e => setEmail(e.target.value)} 
-        //             className='form-control' 
-        //         />
-        //     </div>
-        //     <div className='margin-bottom'>
-        //         <label>Password Address</label>
-        //         <input 
-        // value={password}
-        // onChange={e => setPassword(e.target.value)}
-        //             type='password' className='form-control' />
-        //     </div>
-        //     {errors}
-        //     <button className='btn btn-primary'>Sign in</button>
-        // </form>
-
         <section className="vh-100">
             <div className="container py-5 h-100">
                 <div className="row d-flex align-items-center justify-content-center h-100">
