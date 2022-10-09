@@ -35,9 +35,15 @@ function NewTicket() {
     };
 
     return (
-        <div>
-            <h1>Create a ticket</h1>
-            <form onSubmit={onSubmit}>
+        <div 
+        // className='rounded p-2 form-color' 
+        className='d-flex justify-content-md-center align-items-center vh-100'
+        >
+            <form 
+            className='rounded w-75 form-color p-3'
+            onSubmit={onSubmit}
+            >
+                <h1>Create a ticket</h1>
                 <div className='margin-bottom'>
                     <label>Title</label>
                     <input
