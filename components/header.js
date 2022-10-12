@@ -36,7 +36,7 @@ const Header = ({ currentUser }) => {
 
           {/* the link component is to be used inside next.js not just href a */}
           <Link href='/'>
-            <a className='navbar-brand'>GetTicket</a>
+            <a className='navbar-brand'>GetTickets</a>
           </Link>
 
           <ul className='me-auto nav'>

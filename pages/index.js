@@ -27,10 +27,10 @@ const Index = ({ currentUser, tickets }) => {
                 <Image src={bg} alt='...' placeholder="blur"></Image>
             </div>
 
-            <div className='filters overflow-hidden'>
-                <input type='text' className='float-start form-control mr-sm-2 form-width' ></input>
+            <div className='filters d-md-flex'>
+                    <input type='text' placeholder='Search' className='me-md-auto form-control form-width ' ></input>
 
-                <input type='date' className='float-end form-control mr-sm-2 form-width'></input>
+                    <input type='date' placeholder='dd-MM-yyyy' className=' form-control form-width'></input>
             </div>
 
             <div className="row row-cols-1 row-cols-md-4 g-4">
