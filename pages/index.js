@@ -10,11 +10,11 @@ const Index = ({ currentUser, tickets }) => {
     const ticketList = tickets.map(ticket => {
         return (
             <div key={ticket.id} className="col">
-                <div  className="card" >
+                <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">{ticket.title}</h5>
                         <p className="card-text">Price: {ticket.price}.</p>
-                        <a onClick={() => router.push('/tickets/[ticketId]',`/tickets/${ticket.id}`)} className="btn btn-primary">Buy</a>
+                        <a onClick={() => router.push('/tickets/[ticketId]', `/tickets/${ticket.id}`)} className="btn btn-primary">Buy</a>
                     </div>
                 </div>
             </div>
@@ -28,8 +28,9 @@ const Index = ({ currentUser, tickets }) => {
             </div>
 
             <div className='filters overflow-hidden'>
-                <input type='text' className='float-start'></input>
-                <input type='date' className='float-end'></input>
+                <input type='text' className='float-start form-control mr-sm-2 form-width' ></input>
+
+                <input type='date' className='float-end form-control mr-sm-2 form-width'></input>
             </div>
 
             <div className="row row-cols-1 row-cols-md-4 g-4">

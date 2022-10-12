@@ -1,18 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const OrderIndex = ({ orders }) => {
-  return (
-    <ul>
-        {
-            orders.map(order => {
-                return <li key={order.id}>
-                    {order.ticket.title} - {order.status}
-                </li>
+    const [html, setHtml] = useState('');
+    useEffect(() => {
+        setHtml(orderList);
+    }, [orders])
 
-            })
-        }
-    </ul>
-  )
+    const displayOrders = orders.reverse();
+    const orderList = displayOrders.map(order => {
+        return (
+            <tr key={order.id}>
+                <td>{order.id}</td>
+                <td>{order.ticket.title}</td>
+                <td>{order.ticket.price}</td>
+                <td>{order.status}</td>
+            </tr>
+        );
+    })
+
+    return (
+        <table className='table'>
+            <thead>
+                <tr>
+                    <th scope='col'>Order number</th>
+                    <th scope='col'>Ticket title</th>
+                    <th scope='col'>price</th>
+                    <th scope='col'>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {html}
+            </tbody>
+        </table>
+    )
 }
 
 OrderIndex.getInitialProps = async (context, client) => {

@@ -22,3 +22,7 @@ background: #eee;
 .form-color {
     background-color: #9fd8ed;
 }
+
+.form-width {
+    width: 30%!important;
+}
