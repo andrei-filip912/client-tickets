@@ -34,16 +34,25 @@ function OrderShow({ order, currentUser }) {
         return <div>Order Expired</div>;
     }
     return (
-        <div>
-            Time left to pay: {timeLeft} seconds
-            <StripeCheckout
-                token={({ id }) => doRequest({ token: id })}
-                stripeKey="pk_test_51Ln2cvDXI6Nj26FFTpKF6pfGVKKbR8ucsDDlhKWESTP9SHCTEoKI5CTyPlGdgFWlrly66iSoZEyUq6HKnlv39t9j006SAFwYjx"
-                amount={order.ticket.price * 100}
-                email={currentUser.email}
-                currency={'EUR'}
-            />
-            {errors}
+        <div className='d-flex justify-content-sm-center align-items-center vh-100'>
+            <div className='row rounded form-color'>
+                <div className='col'>
+                    <p className='m-3'>Time left to pay: {timeLeft} seconds</p>
+                    <div className='text-center'>
+                        <StripeCheckout
+                            token={({ id }) => doRequest({ token: id })}
+                            stripeKey="pk_test_51Ln2cvDXI6Nj26FFTpKF6pfGVKKbR8ucsDDlhKWESTP9SHCTEoKI5CTyPlGdgFWlrly66iSoZEyUq6HKnlv39t9j006SAFwYjx"
+                            amount={order.ticket.price * 100}
+                            email={currentUser.email}
+                            currency={'EUR'}
+                            className='m-3 '
+                        />
+                    </div>
+
+                    {errors}
+                </div>
+
+            </div>
         </div>
     )
 }

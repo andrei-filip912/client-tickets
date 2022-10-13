@@ -13,7 +13,7 @@ const Index = ({ currentUser, tickets }) => {
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">{ticket.title}</h5>
-                        <p className="card-text">Price: {ticket.price}.</p>
+                        <p className="card-text">Price: {ticket.price}</p>
                         <a onClick={() => router.push('/tickets/[ticketId]', `/tickets/${ticket.id}`)} className="btn btn-primary">Buy</a>
                     </div>
                 </div>

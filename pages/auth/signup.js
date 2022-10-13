@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Router from 'next/router';
 import Image from 'next/image';
 import useRequest  from '../../hooks/use-request';
-import draw2 from '../../public/draw2.svg';
+import signUp from '../../public/signUp.svg';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
@@ -27,7 +27,7 @@ const Signup = () => {
                 <div className="row d-flex align-items-center justify-content-center h-100">
                     <div className="col-md-8 col-lg-7 col-xl-6">
                         <div className="img-fluid">
-                            <Image src={draw2}
+                            <Image src={signUp}
                                 alt="Phone image">
                             </Image>
                         </div>

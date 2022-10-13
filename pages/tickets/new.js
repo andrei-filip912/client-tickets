@@ -35,10 +35,7 @@ function NewTicket() {
     };
 
     return (
-        <div 
-        // className='rounded p-2 form-color' 
-        className='d-flex justify-content-md-center align-items-center vh-100'
-        >
+        <div className='d-flex justify-content-md-center align-items-center vh-100'>
             <form 
             className='rounded w-75 form-color p-3'
             onSubmit={onSubmit}
