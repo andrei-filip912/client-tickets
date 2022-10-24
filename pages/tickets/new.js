@@ -9,11 +9,13 @@ function NewTicket() {
     const [price, setPrice] = useState('');
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
+    const [description, setDescription] = useState('');
+
     const [doRequest, errors] = useRequest({
         url: '/api/tickets',
         method: 'post',
         body: {
-            title, price, date, location
+            title, price, date, location, description
         },
         onSuccess: () => {
             router.push('/');
@@ -73,12 +75,21 @@ function NewTicket() {
                         }}
                         className='form-control' />
                 </div>
-                <div className='pb-4'>
+                <div className='pb-2'>
                     <label>Location</label>
                     <input
                         value={location}
                         onChange={(e) => {
                             setLocation(e.target.value)
+                        }}
+                        className='form-control' />
+                </div>
+                <div className='pb-2'>
+                    <label>Description</label>
+                    <input
+                        value={description}
+                        onChange={(e) => {
+                            setDescription(e.target.value)
                         }}
                         className='form-control' />
                 </div>
