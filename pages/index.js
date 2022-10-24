@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import bg from '../public/bg.jpg';
-// import ticket from '../public/ticket.jpg';
+import sadImage from '../public/sad.png';
 import { useRouter } from 'next/router';
 
 const Index = ({ currentUser, tickets }) => {
@@ -24,20 +24,36 @@ const Index = ({ currentUser, tickets }) => {
     });
 
     return (
-        <div>
+        <div className=''>
             <div className="concert-img rounded" >
                 <Image src={bg} alt='...' placeholder="blur"></Image>
             </div>
 
             <div className='filters d-md-flex'>
-                    <input type='text' placeholder='Search' className='me-md-auto form-control form-width ' ></input>
+                <input type='text' placeholder='Search' className='me-md-auto form-control form-width ' ></input>
 
-                    <input type='date' placeholder='dd-MM-yyyy' className=' form-control form-width'></input>
+                <input type='date' placeholder='dd-MM-yyyy' className=' form-control form-width'></input>
             </div>
+            {
+                tickets.length  ? (
+                    <div className="row row-cols-1 row-cols-md-4 g-4">
+                        {ticketList}
+                    </div>
+                )
+                    :
+                    (
+                        <div className="d-flex flex-column justify-content-center align-items-center vh-40 ">
 
-            <div className="row row-cols-1 row-cols-md-4 g-4">
-                {ticketList}
-            </div>
+                            <div className='sad-icon pb-5 text-center'>
+                                <Image src={sadImage}></Image>
+                                <p>No tickets found</p>
+                            </div>
+
+
+                        </div>
+                    )
+            }
+
         </div>
     );
 

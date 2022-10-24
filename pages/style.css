@@ -28,9 +28,11 @@ background: #eee;
     }
  }
 
- /* .fix-circle-center {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
- } */
+ .sad-icon {
+    width: 8%;
+    height: 8%;
+ }
+
+ .vh-40 {
+    height: 40vh;
+ }
