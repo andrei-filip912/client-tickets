@@ -19,8 +19,8 @@ const TicketShow = ({ ticket }) => {
             <div className='row rounded w-75 form-color p-3'>
                 <div className='col'>
                     <h1>{ticket.title}</h1>
-                    <h2>Date and time</h2>
-                    <h3>Location</h3>
+                    <h2>{ticket.date}</h2>
+                    <h3>{ticket.location}</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.

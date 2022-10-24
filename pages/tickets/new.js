@@ -7,11 +7,13 @@ function NewTicket() {
 
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
+    const [date, setDate] = useState('');
+    const [location, setLocation] = useState('');
     const [doRequest, errors] = useRequest({
         url: '/api/tickets',
         method: 'post',
         body: {
-            title, price
+            title, price, date, location
         },
         onSuccess: () => {
             router.push('/');
@@ -27,21 +29,21 @@ function NewTicket() {
     const onBlur = () => {
         const value = parseFloat(price);
 
-        if(isNaN(value)) {
+        if (isNaN(value)) {
             return;
-        }   
+        }
 
         setPrice(value.toFixed(2));
     };
 
     return (
         <div className='d-flex justify-content-md-center align-items-center vh-100'>
-            <form 
-            className='rounded w-75 form-color p-3'
-            onSubmit={onSubmit}
+            <form
+                className='rounded w-75 form-color p-3'
+                onSubmit={onSubmit}
             >
                 <h1>Create a ticket</h1>
-                <div className='margin-bottom'>
+                <div className='pb-2'>
                     <label>Title</label>
                     <input
                         value={title}
@@ -51,18 +53,40 @@ function NewTicket() {
                         className='form-control'
                     />
                 </div>
-                <div className='margin-bottom'>
+                <div className='pb-2'>
                     <label>Price</label>
-                    <input 
+                    <input
                         value={price}
                         onBlur={onBlur} // event onLeave
                         onChange={(e) => {
                             setPrice(e.target.value)
-                        }} 
+                        }}
+                        className='form-control' />
+                </div>
+                <div className='pb-2'>
+                    <label>Date</label>
+                    <input
+                        type='date'
+                        value={date}
+                        onChange={(e) => {
+                            setDate(e.target.value)
+                        }}
+                        className='form-control' />
+                </div>
+                <div className='pb-4'>
+                    <label>Location</label>
+                    <input
+                        value={location}
+                        onChange={(e) => {
+                            setLocation(e.target.value)
+                        }}
                         className='form-control' />
                 </div>
                 {errors}
-                <button className='btn btn-primary'>Submit</button>
+                <div className='text-center'>
+                    <button className='btn btn-primary'>Submit</button>
+                </div>
+
             </form>
         </div>
     )
