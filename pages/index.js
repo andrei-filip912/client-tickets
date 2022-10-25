@@ -13,9 +13,10 @@ const Index = ({ currentUser, tickets }) => {
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">{ticket.title}</h5>
-                        <p className="card-text">{ticket.date}</p>
+                        <p className="card-text">{Date(ticket.date).toString()}</p>
                         <p className="card-text">{ticket.location}</p>
                         <p className="card-text">Price: {ticket.price}</p>
+                        <p className="card-text">Description: {ticket.description}</p>
                         <a onClick={() => router.push('/tickets/[ticketId]', `/tickets/${ticket.id}`)} className="btn btn-primary">Buy</a>
                     </div>
                 </div>
@@ -35,7 +36,7 @@ const Index = ({ currentUser, tickets }) => {
                 <input type='date' placeholder='dd-MM-yyyy' className=' form-control form-width'></input>
             </div>
             {
-                tickets.length  ? (
+                tickets.length ? (
                     <div className="row row-cols-1 row-cols-md-4 g-4">
                         {ticketList}
                     </div>
@@ -43,13 +44,10 @@ const Index = ({ currentUser, tickets }) => {
                     :
                     (
                         <div className="d-flex flex-column justify-content-center align-items-center vh-40 ">
-
                             <div className='sad-icon pb-5 text-center'>
                                 <Image src={sadImage}></Image>
                                 <p>No tickets found</p>
                             </div>
-
-
                         </div>
                     )
             }
