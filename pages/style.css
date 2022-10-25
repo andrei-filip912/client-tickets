@@ -36,3 +36,15 @@ background: #eee;
  .vh-40 {
     height: 40vh;
  }
+ .vh-90 {
+    height: 90vh;
+ }
+ .vh-80 {
+    height: 80vh;
+ }
+ .ticket-description {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }

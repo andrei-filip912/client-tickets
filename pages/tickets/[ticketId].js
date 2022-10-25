@@ -3,6 +3,11 @@ import useRequest from '../../hooks/use-request';
 import { useRouter } from 'next/router';
 
 const TicketShow = ({ ticket }) => {
+    const getDateString = (string) => {
+        const date = new Date(string);
+        return date.getDay() + '/' + (date.getMonth() +1) + '/' + date.getFullYear() + ' ' + date.getUTCHours() + ':' + date.getMinutes();
+    }
+
     const router = useRouter();
 
     const [doRequest, errors] = useRequest({
@@ -15,17 +20,17 @@ const TicketShow = ({ ticket }) => {
     });
     return (
 
-        <div className='d-flex justify-content-sm-center align-items-center vh-100 vstack'>
+        <div className='d-flex justify-content-sm-center align-items-center vh-90 vstack'>
             <div className='row rounded w-75 form-color p-3'>
                 <div className='col'>
                     <h1>{ticket.title}</h1>
-                    <h2>{ticket.date}</h2>
+                    <h3>{getDateString(ticket.date)}</h3>
                     <h3>{ticket.location}</h3>
                     <p>{ticket.description}</p>
                 </div>
                 <div className='col-4'>
                     <div className='row mt-4 align-items-center'>
-                        <h4 className='text-center'>Price: {ticket.price}</h4>
+                        <h2 className='text-center'>{ticket.price}€</h2>
                         <button onClick={() => doRequest()} className='btn btn-primary p-2 mt-2'>Purchase</button>
                     </div>
                     <div className='row mt-4'>

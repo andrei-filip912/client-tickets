@@ -39,7 +39,7 @@ function NewTicket() {
     };
 
     return (
-        <div className='d-flex justify-content-md-center align-items-center vh-100'>
+        <div className='d-flex justify-content-md-center align-items-center vh-90'>
             <form
                 className='rounded w-75 form-color p-3'
                 onSubmit={onSubmit}
@@ -68,7 +68,7 @@ function NewTicket() {
                 <div className='pb-2'>
                     <label>Date</label>
                     <input
-                        type='date'
+                        type='datetime-local'
                         value={date}
                         onChange={(e) => {
                             setDate(e.target.value)
