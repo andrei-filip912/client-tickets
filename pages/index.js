@@ -73,14 +73,12 @@ const Index = ({ currentUser, tickets }) => {
                 <input
                     type='text'
                     placeholder='Search'
-                    className='me-md-auto form-control form-width mb-sm-2'
+                    className='form-control form-width mb-sm-2'
                     onBlur={(e) => {
                         setFilter(e.target.value.toLowerCase());
                     }}
                 >
                 </input>
-
-                <input type='date' placeholder='dd-MM-yyyy' className=' form-control form-width '></input>
             </div>
             {
                 tickets.length ? (

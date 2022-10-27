@@ -10,23 +10,10 @@
 .overflow-hidden {
     overflow: hidden;
 }
-/* .divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-} */
-
 
 .form-color {
     background-color: #9fd8ed;
 }
-@media (min-width: 767.98px) { 
-    .form-width {
-        width: 30%!important;
-    }
- }
 
  .sad-icon {
     width: 8%;
