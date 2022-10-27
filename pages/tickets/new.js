@@ -39,7 +39,7 @@ function NewTicket() {
     };
 
     return (
-        <div className='d-flex justify-content-md-center align-items-center vh-90'>
+        <div className='d-flex justify-content-center align-items-center vh-90'>
             <form
                 className='rounded w-75 form-color p-3'
                 onSubmit={onSubmit}
