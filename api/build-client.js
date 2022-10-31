@@ -5,7 +5,7 @@ const buildClient = ({ req }) => {
     if(typeof window === 'undefined') {
         // request will be sent from server
         return axios.create({
-            baseURL: 'http://ingress-nginx-srv',
+            baseURL: 'http://www.tickets-buy-now.shop',
             headers: req.headers
         });
 
